@@ -10,7 +10,7 @@ def color_text(text: str, number: int) -> tuple[str, int]:
     return (colored_text, len(escape_sequence) + 4)
 
 def show_stacks(stacks: list[list, list, list]) -> None:
-    os.system('cls' if os.name == 'nt' else 'clear') # Clear terminal
+    os.system('cls' if os.name == 'nt' else 'clear')
     
     space_to_center = amount_disks * 2 + 1
     
@@ -43,12 +43,10 @@ def handle_input(stacks: list[list, list, list]) -> None:
 
 if __name__ == "__main__":
     winning_example: list = [disk for disk in range(amount_disks)]
-    stacks: list[list, list, list] = [[disk for disk in range(amount_disks)], [], []] # make the stack, no mess
+    stacks: list[list, list, list] = [[disk for disk in range(amount_disks)], [], []]
     stacks[0].reverse()
     winning_example.reverse()
     
-    # + 6 -> spaces
-    # + 3 -> numbers on top, input, victory
     os.system(f"mode con: cols={amount_disks * 6 + 6} lines={amount_disks + 3}")
     
     show_stacks(stacks)
