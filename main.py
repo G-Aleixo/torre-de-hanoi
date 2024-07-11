@@ -36,6 +36,8 @@ def handle_input(stacks: list[list, list, list]) -> None:
             pass
     if len(stacks[destination]) == 0:
         stacks[destination].append(stacks[source].pop())
+    elif len(stacks[source]) == 0:
+        pass
     elif stacks[source][len(stacks[source]) - 1] > stacks[destination][len(stacks[destination]) - 1]:
         pass
     else:
